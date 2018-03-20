@@ -1,0 +1,65 @@
+.burger {
+  float: right;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  top: -10px;
+  transition: .4s;
+  &:hover {
+    div[class*='line']{
+      width: 25px;
+    }
+  }
+}
+
+div[class*='line-']{
+  background-color: #fff;
+  height: 1px;
+  border-radius: 0px;
+  margin-top: 8px;
+  position: absolute;
+  transition: .3s ease;
+}
+
+.line-01 {
+  width: 28px;
+  left: 0;
+}
+.line-02 {
+  width: 20px;
+  top: 8px;
+  left: 0;
+}
+.line-03 {
+  width: 12px;
+  top: 16px;
+  left: 0;
+}
+
+.burger.is-active {
+
+  .line-02 {
+    display: none;
+  }
+  .line-01 {
+    width: 25px;
+    transform: rotate(45deg);
+    top: 10px;
+  }
+  .line-03 {
+    width: 25px;
+    transform: rotate(-45deg);
+    top: 10px;
+  }
+  &:hover {
+    .line-01, .line-03 {
+      background-color: $color-dark;
+    }
+    .line-02 {
+      background-color: $color-dark;
+    }
+
+  }
+}

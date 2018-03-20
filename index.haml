@@ -1,0 +1,111 @@
+---
+---
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %meta{:charset => "utf-8"}
+    %title lakebox | larsknoke.com
+    %meta{:content => "lakebox | larsknoke.com", :name => "description"}
+    %meta{:content => "LK", :name => "author"}
+
+
+    %link{:href => "https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700", :rel => "stylesheet"}
+    %link{:href => "https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800", :rel => "stylesheet"}
+
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css", :rel => "stylesheet"}
+    %link{:href => "assets/css/style.css", :rel => "stylesheet"}
+
+    /[if lt IE 9]
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+
+
+  %body
+    .container
+      .main-container
+        .logo-burger-container
+          .logo
+            %img{:src => "/assets/img/logo_lk.svg"}
+          .burger{:style => "opacity:0"}
+            .line-01
+            .line-02
+            .line-03
+        .box.main-content{:style => "transform: translateX(100%)"}
+          .content-box
+            .design-main
+              %h1 DESIGN.
+              %p
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata.
+              %p
+                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+
+        .box.main-start
+          %nav
+            .arrow
+              %img{:src => "/assets/img/arrow.svg"}
+            .nav-container
+              %h1
+                DESIGN.
+              .nav-text
+                Ich gestalte responsive Websites,
+                %br
+                 Interfaces und Web-Applications im  Front-End
+                %br
+                sowie Back-End Bereich.
+                .divider
+              %h1
+                CODE.
+              .nav-text
+                Konzeption und Programmierung
+                %br
+                von Web-Applications und
+                %br
+                 Web-Interfaces.
+                .divider
+              %h1
+                ABOUT.
+              .nav-text
+                Lars Knoke, M, 32 Jahre
+                %br
+                 Holzminden, Niedersachsen 
+                %br
+                Deutschland
+                .divider
+              %h1
+                CONTACT.
+              .nav-text
+                Kontakt hier oder
+                %br
+                0152 / 51746289
+                %br
+                oder  info@larsknoke.com
+                .divider
+
+        .footer
+          LARS KNOKE | MECKLENBURGER-STR. 6 | 37603 HOLZMINDEN
+
+      .box.side
+        .side-img.start-side{:style => "background-image: url('/assets/img/start_side.jpg');     transform-origin: 50% 50% 0px; opacity: 1; transform: translateX(0%);"}
+        .side-img.design-side{:style => "background-image: url('/assets/img/design_side.jpg');     transform-origin: 100% 50% 0px; opacity: 1; transform: translateX(-100%);"}
+        .burger-menu
+          %ul
+            %li
+              %a{:href => "#design"}
+                DESIGN
+            %li
+              %a{:href => "#design"}
+                CODE
+            %li
+              %a{:href => "#about"}
+                ABOUT
+            %li
+              %a{:href => "#contact"}
+                CONTACT
+
+
+
+
+    %script{:crossorigin => "anonymous", :integrity => "sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=", :src => "https://code.jquery.com/jquery-1.12.4.min.js"}
+    %script{:src=>"/assets/js/lib/jquery-ui.accordion.min.js"}
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"}
+    %script{:src=>"/assets/js/main.js"}
