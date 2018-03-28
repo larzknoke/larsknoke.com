@@ -1,0 +1,61 @@
+
+
+.content-box {
+  position: relative;
+  margin-top: 7rem;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  > div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+    h1 {
+      margin-bottom: 1.5rem;
+    }
+    p {
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+      line-height: 1.3rem;
+    }
+    h2 {
+      color: white;
+      // letter-spacing: 1px;
+      margin: 2rem 0 1rem 0;
+      line-height: 2rem;
+      font-family: $font-serif;
+      position: relative;
+      padding-bottom: .7rem;
+
+      &.bottomLine:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: white;
+        width: 15%;
+        height: 2px;
+        transition: all $easingOut 400ms;
+        z-index: -99;
+      }
+
+      &.topLine {
+        padding-left: 17%;
+      }
+
+      &.topLine:after {
+        content: '';
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        background-color: white;
+        width: 15%;
+        height: 2px;
+        transition: all $easingOut 400ms;
+        z-index: -99;
+      }
+    }
+}

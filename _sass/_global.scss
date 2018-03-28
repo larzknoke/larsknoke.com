@@ -1,0 +1,145 @@
+$color-dark: #222222;
+$color-light: #656565;
+$color-green: #42BE9A;
+$font-serif: 'Roboto Mono', monospace;
+$font-sans: 'Montserrat', sans-serif;
+
+$easingOut: cubic-bezier(.6,.03,.2,1);
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  background-color: $color-dark;
+  color: white;
+  font-family: $font-serif;
+  line-height: 1;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+h1,h2,h3,h3,h4,h5,h6 {
+  font-family: $font-sans;
+  font-weight: bold;
+  margin: 0;
+}
+
+h1 {
+  font-size: 3.75rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+.btn {
+  border: 2px solid white;
+  padding: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  font-family: $font-serif;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  transition: all $easingOut 400ms;
+  margin: 0 auto;
+  position: relative;
+  z-index: 99;
+
+
+  &:hover {
+    // background-color: white;
+    color: $color-green !important;
+    cursor: pointer;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 0%;
+    height: 100%;
+    transition: all $easingOut 400ms;
+    z-index: -99;
+  }
+
+  &:hover:before {
+    width: 100%;
+  }
+}
+
+
+.color-green {
+  color: $color-green !important;
+}
+.color-white {
+  color: white !important;
+}
+.color-dark {
+  color: $color-dark !important;
+}
+
+.w-30 {
+  width: 30% !important
+}
+.w-40 {
+  width: 40% !important
+}
+.w-50 {
+  width: 50% !important
+}
+.w-60 {
+  width: 60% !important
+}
+.w-70 {
+  width: 70% !important
+}
+.w-80 {
+  width: 80% !important
+}
+.w-90 {
+  width: 90% !important
+}
+.w-100 {
+  width: 100% !important
+}
+
+.mt-1 {
+  margin-top: 2rem;
+}
+.mt-2 {
+  margin-top: 3rem;
+}
+.mt-3 {
+  margin-top: 4rem;
+}
+.mt-4 {
+  margin-top: 5rem;
+}
+
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: white;
+  opacity: .3;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: white;
+  opacity: .3;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: white;
+  opacity: .3;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: white;
+  opacity: .3;
+}

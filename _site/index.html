@@ -16,7 +16,7 @@
 </head>
 <body>
 <div class='container'>
-<div class='main-container'>
+<div class='box main-container'>
 <div class='logo-burger-container'>
 <div class='logo'>
 <img src='/assets/img/logo_lk.svg'>
@@ -27,48 +27,107 @@
 <div class='line-03'></div>
 </div>
 </div>
-<div class='box main-content' style='transform: translateX(100%)'>
+<div class='main-content' style='transform: translateX(100%)'>
 <div class='content-box'>
-<div class='design-main'>
+<div class='main-content-design'>
 <h1>DESIGN.</h1>
 <p>
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata.
+Als selbtständiger UX & UI Designer habe ich mich auf die Konzeption und die grafische Umsetzung von Websites, Landingpages, Online Shops und Web-Applikationen spezialisiert.
 </p>
 <p>
-At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+Vom Grundkonzept über das Design bis zur fertigem Produkt. Mit oder ohne Content Management System (CMS) und natürlich responsiv gestaltet, für die optimale Ansicht auf jedem Endgerät.
 </p>
+<h2 class='typeItDesign bottomLine'>
+WEBSITE, LANDINGPAGES,
+<br>
+WEB & MOBILE APPS, ONLINE-SHOPS
+</h2>
+<p>
+Lassen Sie uns gemeinsam Ihre Idee umsetzen. Kontaktieren Sie mich gerne über das untenstehende Formular oder direkt über: info@larsknoke.com | 0152/51746289
+</p>
+<!-- TODO: BUTTON HOVER funktioniert nicht wegen Footer -->
+<div class='btn w-40 mt-2'>
+KONTAKT
+</div>
+</div>
+<div class='main-content-code'>
+<h1>CODE.</h1>
+<p>
+Für die korrekte Umsetzung vom Design zur fertigen Website ist die Wahl der richtigen Programmiersprache ebenfalls ein wichtiger Prozess in der Entwicklung um eine ausreichende Performance zu gewährleisten. Das richtige Framework und Content Management Systems hängt von den Ansprüchen der Website/App ab.
+</p>
+<h2>
+<span class='color-dark' style='letter-spacing:0'>
+ICH BENUTZE:
+</span>
+<span class='typeItCode'></span>
+</h2>
+<p>
+Moderne Technologien entwickeln sich immer weiter, daher ist es entscheidend, immer auf dem neuesten technischen Stand zu sein. Meine Erfahrung im Front- sowie Back-End Bereich ermöglichen es mir die richtige Software für Ihr Projekt auszuwählen.
+</p>
+<div class='btn w-40 mt-2'>
+KONTAKT
+</div>
+</div>
+<div class='main-content-about'>
+<h1>ABOUT.</h1>
+<p>
+Ich bin Lars Knoke. Freiberuflicher Webdesigner aus Holzminden mit langjähriger Erfahrung in Sachen Webdesign und Webentwicklung im Front- sowie Back-End Bereich.
+</p>
+<img class='coder' src='/assets/img/coder.jpg'>
+<h2 class='topLine'>
+Lars Knoke, M, 32 Jahre 
+<br>
+Holzminden, Niedersachsen
+<br>
+ Deutschland
+</h2>
+</div>
+<div class='main-content-contact'>
+<h1 class='color-white'>CONTACT.</h1>
+<form action='/action_page.php'>
+<div class='contact-form'>
+<div class='input-group'>
+<input class='input-control' name='name' placeholder='Name' type='text' value=''>
+<input class='input-control' name='email' placeholder='Email' type='email' value=''>
+</div>
+<div class='input-group'>
+<textarea class='input-control' name='text' placeholder='Text hier...' rows='4' type='text' value=''></textarea>
+</div>
+<div class='input-group'>
+<a class='btn input-control submit'>
+Senden
+</a>
+</div>
+</div>
+</form>
 </div>
 </div>
 </div>
-<div class='box main-start'>
+<div class='main-start'>
 <nav>
 <div class='arrow'>
 <img src='/assets/img/arrow.svg'>
 </div>
 <div class='nav-container'>
-<h1>
+<h1 data-link='design'>
 DESIGN.
 </h1>
 <div class='nav-text'>
 Ich gestalte responsive Websites,
-<br>
  Interfaces und Web-Applications im  Front-End
-<br>
 sowie Back-End Bereich.
 <div class='divider'></div>
 </div>
-<h1>
+<h1 data-link='code'>
 CODE.
 </h1>
 <div class='nav-text'>
 Konzeption und Programmierung
-<br>
 von Web-Applications und
-<br>
  Web-Interfaces.
 <div class='divider'></div>
 </div>
-<h1>
+<h1 data-link='about'>
 ABOUT.
 </h1>
 <div class='nav-text'>
@@ -79,11 +138,15 @@ Lars Knoke, M, 32 Jahre
 Deutschland
 <div class='divider'></div>
 </div>
-<h1>
+<h1 data-link='contact'>
 CONTACT.
 </h1>
 <div class='nav-text'>
-Kontakt hier oder
+Kontakt
+<a class='color-green toContact' href='/'>
+hier
+</a>
+oder
 <br>
 0152 / 51746289
 <br>
@@ -94,12 +157,15 @@ oder  info@larsknoke.com
 </nav>
 </div>
 <div class='footer'>
-LARS KNOKE | MECKLENBURGER-STR. 6 | 37603 HOLZMINDEN
+LARS KNOKE | MECKLENBURGER-STR. 6 | 37603 HOLZMINDEN | INFO@LARSKNOKE.COM
 </div>
 </div>
 <div class='box side'>
 <div class='side-img start-side' style='background-image: url(&#39;/assets/img/start_side.jpg&#39;);     transform-origin: 50% 50% 0px; opacity: 1; transform: translateX(0%);'></div>
 <div class='side-img design-side' style='background-image: url(&#39;/assets/img/design_side.jpg&#39;);     transform-origin: 100% 50% 0px; opacity: 1; transform: translateX(-100%);'></div>
+<div class='side-img code-side' style='background-image: url(&#39;/assets/img/code_side.jpg&#39;);     transform-origin: 100% 50% 0px; opacity: 1; transform: translateX(-100%);'></div>
+<div class='side-img contact-side' style='background-image: url(&#39;/assets/img/contact_side.jpg&#39;);     transform-origin: 100% 50% 0px; opacity: 1; transform: translateX(-100%);'></div>
+<div class='side-img about-side' style='background-image: url(&#39;/assets/img/about_side.jpg&#39;);     transform-origin: 100% 50% 0px; opacity: 1; transform: translateX(-100%);'></div>
 <div class='burger-menu'>
 <ul>
 <li>
@@ -118,7 +184,7 @@ ABOUT
 </a>
 </li>
 <li>
-<a href='#contact'>
+<a class='toContact' href='#contact'>
 CONTACT
 </a>
 </li>
@@ -129,6 +195,7 @@ CONTACT
 <script crossorigin='anonymous' integrity='sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=' src='https://code.jquery.com/jquery-1.12.4.min.js'></script>
 <script src='/assets/js/lib/jquery-ui.accordion.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/typeit@5.6.0/dist/typeit.min.js'></script>
 <script src='/assets/js/main.js'></script>
 </body>
 </html>
