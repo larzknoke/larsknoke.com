@@ -3,7 +3,6 @@ $(document).ready(function(){
   const easeCustom = [.6,.03,.2,1]
 
   $(".nav-container").accordion({
-      // heightStyle: "fill",
       collapsible: true,
       active: 0,
       animate: "swing",
@@ -22,144 +21,6 @@ $(document).ready(function(){
   });
 
 
-  $('.toContact').click(function(e){
-    e.preventDefault();
-    $("[class^=main-content-]").hide();
-    $(".main-content-contact").show();
-    startSection(false);
-    sideBig(true);
-    toggleSection("contact", true);
-    burger(true);
-  });
-
-
-  $(".arrow").click(function(){
-
-    var section = $(".ui-accordion-header-active").attr("data-link");
-    $("[class^=main-content-]").hide();
-    $(".main-content-" + section).show();
-
-    sideBig(true);
-    toggleSection(section, true);
-    burger(true);
-    startSection(false);
-
-
-
-  });
-
-  $(document).on("click", ".logo", function(){
-    toStart();
-    sideBig(false);
-    $(".burger-menu").removeClass('is-active');
-    $(".burger").removeClass('is-active');
-  });
-
-  var sideBig = function(data){
-    if (!data) {
-      $(".box.side").css({"flex":"40%"});
-      $(".box.main-container").css({"flex":"60%"});
-    } else {
-      $(".box.side").css({"flex":"30%"});
-      $(".box.main-container").css({"flex":"70%"});
-    }
-  }
-
-  var toggleSection = function(section, trigger){
-    anime({
-      targets: "." + section + "-side",
-      translateX: trigger ? 0 : "-100%",
-      opacity: 1,
-      duration: 600,
-      easing: easeCustom,
-      delay: 600
-    });
-  }
-
-  var burger = function(trigger){
-    anime({
-      targets: ".burger",
-      translateX: trigger ? [100,0] : [0,100],
-      duration: 200,
-      easing: easeCustom,
-      delay: trigger ? 1100 : 0,
-      opacity: trigger ? 1 : 0
-    });
-  }
-
-  var toStart = function(){
-    var section = $(".ui-accordion-header-active").attr("data-link");
-    toggleSection(section, false);
-    burger(false);
-    startSection(true);
-  }
-
-  var startSection = function(trigger){
-    if (!trigger) {
-      anime({
-        targets: ".start-side",
-        translateX: 100,
-        duration: 600,
-        easing: easeCustom,
-        opacity: 0,
-        delay: 600
-      });
-      anime({
-        targets: ".nav-container",
-        translateX: "-100%",
-        delay: 300,
-        duration: 600,
-        easing: easeCustom
-      });
-      anime({
-        targets: ".main-start",
-        translateX: "-100%",
-        delay: 600,
-        duration: 600,
-        easing: easeCustom,
-        opacity: 0
-      });
-      anime({
-        targets: ".main-content",
-        translateX: 0,
-        delay: 700,
-        duration: 600,
-        easing: easeCustom,
-        opacity: 1
-      });
-    } else {
-      anime({
-        targets: ".main-content",
-        translateX: "100%",
-        duration: 600,
-        easing: easeCustom,
-        opacity: 1
-      });
-      anime({
-        targets: ".main-start",
-        translateX: 0,
-        duration: 600,
-        easing: easeCustom,
-        opacity: 1
-      });
-      anime({
-        targets: ".start-side",
-        translateX: 0,
-        duration: 600,
-        easing: easeCustom,
-        opacity: 1,
-        delay: 600
-      });
-      anime({
-        targets: ".nav-container",
-        translateX: 0,
-        delay: 300,
-        duration: 600,
-        easing: easeCustom
-      });
-    }
-  }
-
   new TypeIt('.typeItCode', {
      strings: ['HTML', 'CSS', 'JAVASCRIPT', 'RUBY', 'NODEJS', 'RAILS', 'GIT', 'SQL'],
      breakLines: false,
@@ -169,6 +30,88 @@ $(document).ready(function(){
      loop: true,
      loopDelay: "1500"
 
-});
+  });
+
+
+  /* ANIMATIONS */
+
+  function clickedLink() {
+    return $(".ui-accordion-header-active").attr("data-link");
+  }
+
+  function activeSlide() {
+    return $(".active");
+  }
+
+  function showContent(section) {
+    $("[class^=main-content-]").hide().removeClass("active");
+    $(".main-content-" + (section || clickedLink())).show().addClass("active");
+  }
+
+  function closeSubmenu() {
+    $(".burger-menu").removeClass('is-active');
+    $(".burger").removeClass('is-active');
+  }
+
+  var swichtContent = function(section){
+    var contentOff = $("[class^=main-content-]");
+    contentOff.fadeOut();
+    var contentOn = $(".main-content-" + section);
+    var anim = new TimelineLite();
+    anim
+      .fromTo (contentOn , 0.6, {x: 1000}, {x:"0%",opacity:1,display:'block', ease: Power3.easeInOut})
+    return anim;
+  }
+
+  var contentSwitchTimeline = new TimelineMax({paused: true});
+
+  function navTlGenerator(link){
+    var navTimeline = new TimelineMax({delay: .3, paused: true});
+    navTimeline
+      .to(".nav-container", .6,{x: "-100%", ease: Power3.easeInOut}, "switch")
+      .to(".main-start", .6,{x: "-100%", opacity: 0, ease: Power3.easeInOut}, "switch+=0.3")
+      .to(".main-container", .6,{width: "75%", ease: Power3.easeInOut}, "switch+=0.3")
+      .to(link, .6,{opacity: 1, x: "0%", ease: Power3.easeInOut}, "switch+=0.3")
+      .to(".start-side", .6,{opacity: 1, x: "100%", ease: Power3.easeInOut}, "switch+=0.3")
+      .to(".main-content", .6,{opacity: 1, x: "0%", ease: Power3.easeInOut}, "switch+=0.3")
+      .to(".burger", .2, {opacity: 1, x: 20})
+    return navTimeline
+  }
+
+  function backToHome(link){
+    var backToHomeTl = new TimelineMax({pause: true})
+    backToHomeTl
+      .to(".nav-container", .6,{x: "0%", ease: Power3.easeInOut}, "switch")
+      .to(".main-start", .6,{x: "0%", opacity: 1, ease: Power3.easeInOut}, "switch+=0.3")
+      .to(".main-container", .6,{width: "60%", ease: Power3.easeInOut}, "switch+=0.3")
+      .to(link, .6,{ x: "-100%", ease: Power3.easeInOut}, "switch+=0.3")
+      .to(".start-side", .6,{opacity: 1, x: "0%", ease: Power3.easeInOut}, "switch+=0.3")
+      .to(".main-content", .6,{opacity: 0, x: "100%", ease: Power3.easeInOut}, "switch+=0.3")
+      .to(".burger", .2, {opacity: 0, x: 0})
+    return backToHomeTl
+  }
+
+
+  $(".arrow").click(function(){
+    showContent();
+    var link = $("." + clickedLink() + "-side");
+    var tl = navTlGenerator(link);
+    tl.play();
+  });
+
+  $(".logo").click(function(){
+    closeSubmenu();
+    var link = $("." + clickedLink() + "-side");
+    var tl = backToHome(link);
+    tl.play();
+  });
+
+  $(".toSection").click(function(event){
+    event.preventDefault();
+    var section = $(this).attr("data-link");
+    console.log(section);
+    contentSwitchTimeline.add(swichtContent(section))
+    contentSwitchTimeline.play();
+  });
 
 });

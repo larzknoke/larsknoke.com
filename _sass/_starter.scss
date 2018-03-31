@@ -12,12 +12,12 @@
 
 .box {
   // TODO flex-basis transition läuft nicht unter Safari, evtl. mit "WIDTH" arbeiten
-  transition: flex $easingOut 700ms 700ms, width $easingOut 700ms 700ms;
-  will-change: transform, flex, width;
+  // transition: flex $easingOut 700ms 700ms, width $easingOut 700ms 700ms;
+  // will-change: transform, flex, width;
 }
 
 .main-container {
-  flex: 60%;
+  width: 60%;
   overflow: hidden;
   position: relative;
 }
@@ -36,7 +36,7 @@
 }
 
 .box.side {
-  flex: 40%;
+  width: 40%;
   position: relative;
   overflow: hidden;
 

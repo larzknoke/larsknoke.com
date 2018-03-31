@@ -80,7 +80,7 @@ div[class*='line-'] { background-color: #fff; height: 1px; border-radius: 0px; m
 .logo-burger-container { position: absolute; width: 100%; padding: 80px 70px 0px 70px; z-index: 99; }
 .logo-burger-container .logo { float: left; }
 .logo-burger-container .logo:hover { cursor: pointer; }
-.logo-burger-container .burger { float: right; }
+.logo-burger-container .burger { float: right; margin-right: 20px; }
 .logo-burger-container .gh-logo { float: right; margin-top: -5px; margin-right: 15px; transition: all cubic-bezier(0.6, 0.03, 0.2, 1) 400ms; }
 .logo-burger-container .gh-logo:hover { transform: scale(1.25); cursor: pointer; }
 
@@ -101,15 +101,13 @@ nav .arrow:hover { cursor: pointer; transform: translateX(10px) !important; }
 .container { display: flex; align-items: stretch; height: 100vh; }
 .container > * { flex: 1 1 auto; }
 
-.box { transition: flex cubic-bezier(0.6, 0.03, 0.2, 1) 700ms 700ms, width cubic-bezier(0.6, 0.03, 0.2, 1) 700ms 700ms; will-change: transform, flex, width; }
-
-.main-container { flex: 60%; overflow: hidden; position: relative; }
+.main-container { width: 60%; overflow: hidden; position: relative; }
 
 .main-content { padding: 80px 70px 0px 70px; position: absolute; background-color: #42BE9A; color: #222222; height: 100vh; width: 100%; }
 
 .main-start { padding: 80px 70px 0px 70px; }
 
-.box.side { flex: 40%; position: relative; overflow: hidden; }
+.box.side { width: 40%; position: relative; overflow: hidden; }
 .box.side .side-img { position: absolute; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; height: 100%; width: 100%; z-index: -99; }
 
 .content-box { position: relative; margin-top: 7rem; width: 100%; height: 100%; overflow: hidden; }
