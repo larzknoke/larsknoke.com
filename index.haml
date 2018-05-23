@@ -3,15 +3,25 @@
 !!!
 %html{:lang => "en"}
   %head
+    / Global site tag (gtag.js) - Google Analytics
+    %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-109863681-2"}
+    :javascript
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-109863681-2', { 'anonymize_ip': true });
+
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %meta{:charset => "utf-8"}
-    %title lakebox | larsknoke.com
-    %meta{:content => "lakebox | larsknoke.com", :name => "description"}
-    %meta{:content => "LK", :name => "author"}
+    %title larsknoke.com | DESIGN | CODE | WEB
+    %meta{:content => "Webdesign | Webdevelopment | Programmierung | Online-Shops | Apps | Website | Landingpages | Responsive", :name => "description"}
+    %meta{:content => "Lars Knoke", :name => "author"}
+    %meta{:content => "initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width", :name => "viewport"}/
 
 
-    %link{:href => "https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700", :rel => "stylesheet"}
-    %link{:href => "https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800", :rel => "stylesheet"}
+
+    %link{:href => "https://fonts.googleapis.com/css?family=Roboto+Mono:300,700", :rel => "stylesheet"}
+    %link{:href => "https://fonts.googleapis.com/css?family=Montserrat:300,700", :rel => "stylesheet"}
 
     %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css", :rel => "stylesheet"}
     %link{:href => "assets/css/style.css", :rel => "stylesheet"}
@@ -20,10 +30,14 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
 
 
-  %body
+  %body{:onload => "loader()"}
+    #loader
+      %span.loadingText
     .container
       .box.main-container
         .logo-burger-container
+          .arrow-back
+            %img{:src => "/assets/img/arrow-back.svg"}
           .logo
             %img{:src => "/assets/img/logo_lk.svg"}
           .burger{:style => "opacity:0"}
@@ -48,7 +62,7 @@
               %p
                 Lassen Sie uns gemeinsam Ihre Idee umsetzen. Kontaktieren Sie mich gerne über das untenstehende Formular oder direkt über: info@larsknoke.com | 0152/51746289
               / TODO: BUTTON HOVER funktioniert nicht wegen Footer
-              .btn.w-40.mt-2.toContact
+              .btn.w-40.mt-2.toSection{"data-link" => "contact"}
                 KONTAKT
             .main-content-code
               %h1 CODE.
@@ -60,7 +74,7 @@
                 %span.typeItCode
               %p
                 Moderne Technologien entwickeln sich immer weiter, daher ist es entscheidend, immer auf dem neuesten technischen Stand zu sein. Meine Erfahrung im Front- sowie Back-End Bereich ermöglichen es mir die richtige Software für Ihr Projekt auszuwählen.
-              .btn.w-40.mt-2.toContact
+              .btn.w-40.mt-2.toSection{"data-link" => "contact"}
                 KONTAKT
             .main-content-about
               %h1 ABOUT.
@@ -75,7 +89,9 @@
                  Deutschland
             .main-content-contact
               %h1.color-white CONTACT.
-              %form{:action => "/action_page.php"}
+              -# %form{:action => "https://formspree.io/info@larsknoke.com", :method => "POST", :id => "contact-form"}
+              %form{"accept-charset" => "UTF-8", :action => "https://formcarry.com/s/rJqKsktpG", :method => "POST", :id => "contact-form"}
+                %input{:name => "_gotcha", :type => "hidden"}
                 .contact-form
                   .input-group
                     %input.input-control{:name => "name", :type => "text", :value => "", :placeholder => "Name"}
@@ -83,8 +99,28 @@
                   .input-group
                     %textarea.input-control{:name => "text", :type => "text", :value => "", :placeholder => "Text hier...", :rows => "4"}
                   .input-group
-                    %a.btn.input-control.submit
+                    %button.btn.input-control.submit.sendform{:type => "submit"}
                       Senden
+            .main-content-imprint
+              %h2.topLine
+                IMPRESSUM
+              %p
+                Lars Knoke
+                %br
+                Mecklenburger Straße 6
+                %br
+                37603 Holzminden
+                %br
+                Telefon: +49 152 / 51746289
+                %br
+                Email: info@larsknoke.com
+                %br
+                Internet: www.larsknoke.com
+                %br
+                Steuer-Nr.: 31/122/06616 FA Holzminden
+                %br
+                Kleinunternehmer i.S.d. § 19 UStG
+
 
         .main-start
           %nav
@@ -97,6 +133,7 @@
                 Ich gestalte responsive Websites,
                  Interfaces und Web-Applications im  Front-End
                 sowie Back-End Bereich.
+                %span.arrow2{"data-link" => "design"} mehr&raquo
                 .divider
               %h1{"data-link" => "code"}
                 CODE.
@@ -104,6 +141,7 @@
                 Konzeption und Programmierung
                 von Web-Applications und
                  Web-Interfaces.
+                %span.arrow2{"data-link" => "code"} mehr&raquo
                 .divider
               %h1{"data-link" => "about"}
                 ABOUT.
@@ -113,22 +151,30 @@
                  Holzminden, Niedersachsen 
                 %br
                 Deutschland
+                %span.arrow2{"data-link" => "about"} mehr&raquo
                 .divider
               %h1{"data-link" => "contact"}
                 CONTACT.
               .nav-text
                 Kontakt
-                %a.color-green.toContact{:href => "/"}
+                %span.onDesktop.color-green.arrow2{"data-link" => "contact", :href => "/"}
                   hier
                 oder
                 %br
-                0152 / 51746289
+                %a{:href => "tel:+4915251746289"} 0152 / 51746289
                 %br
-                oder  info@larsknoke.com
+                oder
+                %a{:href => "mailto: info@larsknoke.com"}  info@larsknoke.com
                 .divider
 
         .footer
-          LARS KNOKE | MECKLENBURGER-STR. 6 | 37603 HOLZMINDEN | INFO@LARSKNOKE.COM
+          LARSKNOKE.COM
+          |
+          %a{:href => "mailto: info@larsknoke.com"}
+            INFO@LARSKNOKE.COM
+          |
+          %span.imprint-trigger.toSection{:href => "#imprint","data-link" => "imprint"}
+            IMPRESSUM
 
       .box.side
         .side-img.start-side{:style => "background-image: url('/assets/img/start_side.jpg');     transform-origin: 50% 50% 0px; opacity: 1; transform: translateX(0%);"}
@@ -150,8 +196,9 @@
             %li
               %a.toSection{:href => "#contact","data-link" => "contact"}
                 CONTACT
-
-
+            %li
+              %a.closeMenu{:href => "#contact","data-link" => ""}
+                X
 
 
     %script{:crossorigin => "anonymous", :integrity => "sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=", :src => "https://code.jquery.com/jquery-1.12.4.min.js"}

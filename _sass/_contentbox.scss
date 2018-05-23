@@ -10,7 +10,7 @@
   > div {
     position: absolute;
     width: 100%;
-    height: 100%;
+    // height: 100%;
   }
 
     h1 {
@@ -58,4 +58,11 @@
         z-index: -99;
       }
     }
+}
+
+.main-content-imprint {
+  p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }

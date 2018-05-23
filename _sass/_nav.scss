@@ -26,10 +26,38 @@
     }
 
   }
+
+  .arrow-back {
+    height: 17px;
+    float: left;
+    overflow: hidden;
+    width: 0;
+
+    &:hover {
+      cursor: pointer;
+
+      img {
+        // transform: translateX(-100%);
+        animation-name: arrow-back;                // Name der Animation
+        animation-duration: 1s;               // Dauer der Animation
+        animation-iteration-count: infinite;  // Anzahl der Wiederholungen
+      }
+    }
+
+    > img {
+      transition: all $easingOut 400ms;
+      height: 100%;
+    }
+  }
+}
+
+@keyframes arrow-back {
+    from {  transform: translateX(0px)    }
+    to   {  transform: translateX(-55%) }
 }
 
 nav {
-  margin-top: 11rem;
+  margin-top: 10rem;
   position: relative;
 
   h1 {
@@ -66,6 +94,13 @@ nav {
     padding: 0;
     padding-bottom: 2rem;
 
+    span {
+      display: none;
+
+      &.onDesktop {
+        display: inline;
+      }
+    }
 
     .divider {
       position: absolute;
@@ -89,6 +124,10 @@ nav {
       transform: translateX(10px) !important;
     }
   }
+
+  .arrow2:hover {
+    cursor: pointer;
+  }
 }
 
 
@@ -104,6 +143,33 @@ nav {
 
     .nav-text{
       max-width: 80%;
+
+      span {
+        display: inline;
+        color: $color-green;
+      }
+    }
+  }
+
+}
+@media (max-width: 768px) {
+
+  nav {
+    margin-top: 7rem;
+
+    .nav-text{
+      // max-width: 60%;
+    }
+  }
+
+}
+@media (max-width: 667px) {
+
+  .logo-burger-container {
+    padding: 4rem 0px 0px 2.5rem;
+
+    .burger {
+        margin-right: 4rem;
     }
   }
 

@@ -12,3 +12,19 @@
     margin-bottom: 0.4rem;
   }
 }
+
+
+@media (max-width: 768px) {
+
+  .main-content-about .coder {
+    width: 50%;
+  }
+
+}
+@media (max-width: 667px) {
+
+  .main-content-about .coder {
+    width: 80%;
+  }
+
+}

@@ -1,9 +1,38 @@
 /* STARTER */
 
+html, body {
+  height: 100%;
+}
+
+#loader {
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-green;
+  color: white;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+  line-height: 1.5rem;
+}
+
+body.loading #loader {
+    overflow: hidden;
+}
+
+/* Anytime the body has the loading class, our
+   loader element will be visible */
+body.loading #loader {
+    display: block;
+}
+
 .container {
   display: flex;
   align-items: stretch;
-  height: 100vh;
+  min-height: 100%;
 
   > * {
     flex: 1 1 auto;
@@ -27,7 +56,7 @@
   position: absolute;
   background-color: $color-green;
   color: $color-dark;
-  height: 100vh;
+  height: 100%;
   width: 100%;
 }
 
@@ -51,17 +80,143 @@
   }
 }
 
+.footer {
+  font-size: .65rem;
+  color: $color-light;
+  position: absolute;
+  bottom: 2rem;
+  padding: 0px 70px 0px 70px;
+  margin-top: 3.5rem;
 
-
-@media (max-width: 1030px) {
-  .container {
-    // flex-flow: column;
+  > a:hover, span:hover {
+    transition: all $easingOut 400ms;
+    color: white;
+    cursor: pointer;
   }
+}
 
+
+@media (max-width: 768px) {
   .main-container {
-    // flex: 50%;
+    // width: 85%;
+    transition: width ease-out 300ms;
+
+    &.is-active {
+      width: 50% !important;
+    }
   }
   .box.side {
-    // flex: 50%;
+    // width: 15%;
+    transition: width ease-out 300ms;
+
+
+    &.is-active {
+      width: 30% !important;
+      height: 200%;
+      z-index: 99;
+    }
   }
+
+}
+
+
+@media (max-width: 667px) {
+  // .container {
+  //   height: auto;
+  // }
+
+  .main-container {
+    width: 85%;
+    transition: width ease-in-out 700ms;
+
+    &.is-active {
+      width: 0% !important;
+    }
+  }
+  .box.side {
+    width: 15%;
+    transition: all ease-in-out 700ms;
+
+
+    &.is-active {
+      width: 100% !important;
+      height: 200%;
+      z-index: 99;
+    }
+  }
+
+  nav {
+
+    h1 {
+      font-size: 2rem;
+
+      &.ui-state-active {
+        font-size: 2.25rem
+      }
+    }
+
+    .nav-text {
+      font-size: 0.6rem;
+      line-height: 1rem;
+    }
+
+  }
+
+
+  .main-start {
+    padding: 4rem 0px 0px 2.5rem;
+  }
+
+  .footer {
+    padding: 0 2rem 0 2.5rem;
+    line-height: 1rem;
+  }
+
+
+  .main-content {
+    padding: 0 3rem 0 2.5rem;
+    height: 100%;
+    // position: relative;
+
+    .content-box {
+
+      margin-top: 0rem;
+      padding-top: 9rem;
+
+      h1 {
+        font-size: 2.75rem;
+      }
+
+      > div {
+        position: relative;
+      }
+    }
+  }
+}
+
+
+@media (min-width: 1366px) {
+
+  nav {
+    // margin-top: 8rem;
+  }
+
+  nav h1.ui-state-active {
+    font-size: 5vw;
+  }
+
+  nav h1 {
+    font-size: 4vw;
+  }
+
+  nav .nav-text {
+    font-size: 1vw;
+    line-height: 2vw;
+  }
+
+
+  .footer {
+    font-size: 0.75vw;
+  }
+
 }

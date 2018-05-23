@@ -71,16 +71,18 @@ div[class*='line-']{
 
 
 /* BURGER MENU */
-
-
 .burger-menu {
-  height: 100vh;
+  height: 100%;
   background-color: rgba(34, 34, 34, 0.95);
   color: white;
   padding: 10% 0;
   transition: all $easingOut 600ms;
   transform: translateX(100%);
 
+  .closeMenu {
+    display: none;
+    color: $color-green;
+  }
 
   &.is-active {
     transform: translateX(0);
@@ -120,4 +122,11 @@ div[class*='line-']{
     }
   }
 }
- 
+
+@media (max-width: 667px) {
+
+  .burger-menu .closeMenu {
+    display: block;
+  }
+
+}
