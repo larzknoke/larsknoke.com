@@ -133,39 +133,7 @@ window.addEventListener('popstate', function(e) {
   .type('<a href="/" >zurück!</a>')
 
 
-  /* CONTACT FORM */
-
-  // $('.sendform').click(function() {
-  //     var $contactForm = $('#contact-form');
-  //     console.log($contactForm);
-  //     $contactForm.submit(function(e) {
-  //       console.log(e);
-  //     	e.preventDefault();
-  //     	$.ajax({
-  //     		url: 'https://formspree.io/info@larsknoke.com',
-  //     		method: 'POST',
-  //     		data: $(this).serialize(),
-  //     		dataType: 'json',
-  //     		beforeSend: function() {
-  //     			$contactForm.append('<div class="alert alert--loading">Sending message…</div>');
-  //     		},
-  //     		success: function(data) {
-  //     			$contactForm.find('.alert--loading').hide();
-  //     			$contactForm.append('<div class="alert alert--success">Message sent!</div>');
-  //     		},
-  //     		error: function(err) {
-  //     			$contactForm.find('.alert--loading').hide();
-  //     			$contactForm.append('<div class="alert alert--error">Ops, there was an error.</div>');
-  //     		}
-  //     	});
-  //     });
-  // });
-
-
-
   /* ANIMATIONS */
-
-
 
 
   function clickedLink() {

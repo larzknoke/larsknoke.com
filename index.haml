@@ -10,6 +10,8 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'UA-109863681-2', { 'anonymize_ip': true });
+    %script{:async => "", :defer => "defer", :src => "https://www.google.com/recaptcha/api.js"}
+
 
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %meta{:charset => "utf-8"}
@@ -30,8 +32,9 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
 
 
-  %body{:onload => "loader()"}
-    #loader
+  -# %body{:onload => "loader()"}
+  %body
+    -# #loader
       %span.loadingText
     .container
       .box.main-container
@@ -85,11 +88,9 @@
                 Lars Knoke, M, 32 Jahre 
                 %br
                 Holzminden, Niedersachsen
-                %br
-                 Deutschland
+                %br Deutschland
             .main-content-contact
               %h1.color-white CONTACT.
-              -# %form{:action => "https://formspree.io/info@larsknoke.com", :method => "POST", :id => "contact-form"}
               %form{"accept-charset" => "UTF-8", :action => "https://formcarry.com/s/rJqKsktpG", :method => "POST", :id => "contact-form"}
                 %input{:name => "_gotcha", :type => "hidden"}
                 .contact-form
@@ -99,7 +100,7 @@
                   .input-group
                     %textarea.input-control{:name => "text", :type => "text", :value => "", :placeholder => "Text hier...", :rows => "4"}
                   .input-group
-                    %button.btn.input-control.submit.sendform{:type => "submit"}
+                    %button.btn.input-control.submit.sendform.g-recaptcha{:type => "submit", "data-callback" => "onSubmit", "data-sitekey" => "6LdtjZMUAAAAABx0lXkYUAPtzDWdeRkmRtrPT-D_"}
                       Senden
             .main-content-imprint
               %h2.topLine
@@ -130,25 +131,20 @@
               %h1{"data-link" => "design"}
                 DESIGN.
               .nav-text
-                Ich gestalte responsive Websites,
-                 Interfaces und Web-Applications im  Front-End
-                sowie Back-End Bereich.
+                Ich gestalte responsive Websites, Interfaces und Web-Applications im Front-End sowie Back-End Bereich.
                 %span.arrow2{"data-link" => "design"} mehr&raquo
                 .divider
               %h1{"data-link" => "code"}
                 CODE.
               .nav-text
-                Konzeption und Programmierung
-                von Web-Applications und
-                 Web-Interfaces.
+                Konzeption und Programmierung von Web-Applications und Web-Interfaces.
                 %span.arrow2{"data-link" => "code"} mehr&raquo
                 .divider
               %h1{"data-link" => "about"}
                 ABOUT.
               .nav-text
                 Lars Knoke, M, 32 Jahre
-                %br
-                 Holzminden, Niedersachsen 
+                %br Holzminden, Niedersachsen 
                 %br
                 Deutschland
                 %span.arrow2{"data-link" => "about"} mehr&raquo
@@ -164,7 +160,7 @@
                 %a{:href => "tel:+4915251746289"} 0152 / 51746289
                 %br
                 oder
-                %a{:href => "mailto: info@larsknoke.com"}  info@larsknoke.com
+                %a{:href => "mailto: info@larsknoke.com"} info@larsknoke.com
                 .divider
 
         .footer
@@ -207,3 +203,8 @@
     %script{:src => "https://cdn.jsdelivr.net/npm/typeit@5.6.0/dist/typeit.min.js"}
 
     %script{:src=>"/assets/js/main.js"}
+
+:javascript
+  function onSubmit(token) {
+    document.getElementById("contact-form").submit();
+  }
