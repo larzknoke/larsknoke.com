@@ -28,6 +28,14 @@ input, textarea, button {
       box-shadow: none !important;
     }
   }
+
+  .sendform.disabled {
+    background-color: #ccc;
+
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
 }
 
 

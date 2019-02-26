@@ -101,8 +101,11 @@
                   .input-group
                     %textarea.input-control{:name => "text", :type => "text", :value => "", :placeholder => "Text hier...", :rows => "4"}
                   .input-group
-                    %button.btn.input-control.submit.sendform.g-recaptcha{:type => "submit", "data-callback" => "onSubmit", "data-sitekey" => "6LdtjZMUAAAAABx0lXkYUAPtzDWdeRkmRtrPT-D_"}
+                    .g-recaptcha{"data-sitekey" => "6LeyJJQUAAAAAMISiKRhCOGm5r0soj-GJO652DuG", :"data-callback" => "enableBtn", :style => "margin: auto; padding: 15px 0 0 10px"}
+                  .input-group
+                    %button.btn.input-control.submit.sendform.disabled{:type => "submit", :disabled => "disabled"}
                       Senden
+                  .err-msg
             .main-content-imprint
               %h2.topLine
                 IMPRESSUM
@@ -206,7 +209,13 @@
 
     %script{:src=>"/assets/js/main.js"}
 
+
 :javascript
-  function onSubmit(token) {
-    document.getElementById("contact-form").submit();
+  function enableBtn(){
+   if(grecaptcha.getResponse() == "") {
+     console.log("reCaptcha FAILED!");
+   } else {
+     $(".sendform").prop("disabled",false);
+     $(".sendform").removeClass("disabled");
+   }
   }

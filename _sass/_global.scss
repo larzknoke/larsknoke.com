@@ -40,8 +40,6 @@ a {
   text-decoration: none;
 }
 
-
-
 .btn, button {
   border: 2px solid white;
   padding: 1rem;
@@ -56,7 +54,10 @@ a {
   margin: 0 auto;
   position: relative;
   z-index: 99;
+}
 
+
+.btn:not(.disabled), button:not(.disabled) {
 
   &:hover {
     // background-color: white;

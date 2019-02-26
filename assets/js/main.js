@@ -221,4 +221,19 @@ window.addEventListener('popstate', function(e) {
     closeSubmenu();
   });
 
+
+  /* Contact-Form*/
+  $(".sendform").click(function(e){
+    e.preventDefault();
+    if(grecaptcha.getResponse() == "") {
+      console.log("reCaptcha FAILED!");
+      console.log(grecaptcha.getResponse())
+      $(".err-msg").append('<h3>Bitte Captcha bestätigen!</h3>');
+    } else {
+      console.log("reCaptcha OK!");
+      $("#contact-form").submit();
+    }
+  });
+
+
 });
