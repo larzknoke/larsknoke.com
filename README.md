@@ -31,7 +31,7 @@ npm start
 - `/impressum`, `/datenschutz`, `/danke`: ergänzende Seiten; eigene 404-Seite.
 - `next.config.ts`: Weiterleitungen bisheriger Pfade wie `/design`, `/code`, `/about` und `/imprint`.
 
-Manrope und IBM Plex Mono werden lokal ausgeliefert. Keine Google-Fonts-Anfragen, kein Analytics, keine Animation-Bibliothek. Animationen berücksichtigen `prefers-reduced-motion`; Inhalte sind auch ohne JavaScript lesbar. Navigation und Kontaktmodal benötigen JavaScript.
+Manrope und IBM Plex Mono werden lokal ausgeliefert. Keine Google-Fonts-Anfragen, kein Tracking außer Vercel Web Analytics (cookielos, nur auf Vercel aktiv), keine Animation-Bibliothek. Animationen berücksichtigen `prefers-reduced-motion`; Inhalte sind auch ohne JavaScript lesbar. Navigation und Kontaktmodal benötigen JavaScript.
 
 ## Kontaktformular
 

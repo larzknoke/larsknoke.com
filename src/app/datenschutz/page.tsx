@@ -43,8 +43,35 @@ export default function Datenschutz() {
         Abs. 1 lit. f DSGVO.
       </p>
       <p>
-        Diese Website bindet keine Analyse- oder Werbetracker ein. Schriften und
-        Bilder werden über die Website selbst ausgeliefert.
+        Diese Website bindet keine Werbetracker ein. Schriften und Bilder werden
+        über die Website selbst ausgeliefert. Zur Reichweitenmessung wird Vercel
+        Web Analytics eingesetzt (siehe unten).
+      </p>
+      <h2>Reichweitenmessung mit Vercel Web Analytics</h2>
+      <p>
+        Ich nutze Vercel Web Analytics der Vercel Inc., 440 N Barranca Ave
+        #4133, Covina, CA 91723, USA, um zu verstehen, wie die Website genutzt
+        wird. Dabei werden aufgerufene Seiten, Referrer, Land, Browser,
+        Betriebssystem und Gerätetyp erfasst. Es werden keine Cookies gesetzt
+        und keine Daten gespeichert, die dich seitenübergreifend oder dauerhaft
+        wiedererkennen lassen; Besuche werden nur anonymisiert zusammengefasst
+        ausgewertet.
+      </p>
+      <p>
+        Grundlage ist das berechtigte Interesse an der statistischen Auswertung
+        und Verbesserung des Webangebots nach Art. 6 Abs. 1 lit. f DSGVO. Du
+        kannst der Verarbeitung aus Gründen, die sich aus deiner besonderen
+        Situation ergeben, widersprechen, zum Beispiel per E-Mail oder mit einem
+        Tracking-Blocker. Eine Verarbeitung in den USA ist möglich. Weitere
+        Informationen:{" "}
+        <a
+          href="https://vercel.com/docs/analytics/privacy-policy"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Datenschutzhinweise zu Vercel Web Analytics
+        </a>
+        .
       </p>
       <h2>Kontakt per E-Mail oder Formular</h2>
       <p>

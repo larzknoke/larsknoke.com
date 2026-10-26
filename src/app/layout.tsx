@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "@fontsource-variable/manrope";
 import "@fontsource/ibm-plex-mono/400.css";
 import "@fontsource/ibm-plex-mono/500.css";
+import { Analytics } from "@vercel/analytics/next";
 import { ContactProvider } from "@/components/contact";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -62,6 +63,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </ContactProvider>
+        <Analytics />
       </body>
     </html>
   );
