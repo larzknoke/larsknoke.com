@@ -1,6 +1,6 @@
 # Lars Knoke — Design. Code. Wirkung.
 
-Neuaufbau der bisherigen Jekyll/HAML-Website als responsive Next.js-OnePage mit App Router, React und TypeScript. Die Originaldateien bleiben als Referenz erhalten; ausgeführt wird ausschließlich die neue Anwendung in `src/`.
+Responsive Next.js-OnePage mit App Router, React und TypeScript (ersetzt die frühere Jekyll/HAML-Website; der Altbestand ist in der Git-Historie).
 
 ## Lokal starten
 
@@ -71,6 +71,6 @@ Mit `PLAYWRIGHT_BASE_URL=http://127.0.0.1:3100` lässt sich ein bereits gestarte
 
 ## Deployment
 
-Die Anwendung benötigt ein Next.js-kompatibles Node.js-Hosting (oder eine Plattform mit Next.js-Unterstützung). `npm run build` erzeugt den Produktionsbuild; `npm start` startet ihn. Der alte Jekyll-Build und das Verzeichnis `_site` sind nicht mehr die Veröffentlichungsvorlage. Kein Deployment wurde automatisch vorgenommen.
+Vorgesehen ist Vercel: Repository importieren, Framework wird automatisch als Next.js erkannt (Build `npm run build`, keine weitere Konfiguration nötig). Optionale `NEXT_PUBLIC_*`-Variablen aus `.env.example` in den Projekteinstellungen setzen. Alternativ läuft `npm run build` und `npm start` auf jedem Node.js-Hosting.
 
 Technische Referenzen: [Next.js App Router](https://nextjs.org/docs/app/getting-started), [Formcarry](https://docs.formcarry.com/getting-started), [Spam Protection](https://docs.formcarry.com/features/spam-protection).

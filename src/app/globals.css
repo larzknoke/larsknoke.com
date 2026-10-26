@@ -369,7 +369,7 @@ textarea:focus-visible {
 }
 .hero-description > p {
   color: #bcc2bb;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.85;
 }
 .hero-description .button {
@@ -618,8 +618,8 @@ textarea:focus-visible {
 }
 .service > p {
   color: var(--muted);
-  font-size: 13px;
-  line-height: 1.9;
+  font-size: 15px;
+  line-height: 1.8;
   max-width: 520px;
 }
 .tag-list {
@@ -864,9 +864,9 @@ textarea:focus-visible {
   letter-spacing: -0.02em;
 }
 .about-copy > p:not(.eyebrow):not(.about-lead) {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--muted);
-  line-height: 1.9;
+  line-height: 1.8;
   margin-top: 15px;
 }
 .about-location {
@@ -933,8 +933,8 @@ textarea:focus-visible {
   margin-bottom: 18px;
 }
 .process-step p {
-  font-size: 12px;
-  line-height: 1.95;
+  font-size: 14px;
+  line-height: 1.8;
   color: var(--muted);
 }
 .step-tag {
@@ -1408,7 +1408,7 @@ textarea:focus-visible {
     margin-top: 25px;
   }
   .hero-description > p {
-    font-size: 12px;
+    font-size: 14px;
   }
   .hero-description .button {
     font-size: 11px;
@@ -1440,7 +1440,7 @@ textarea:focus-visible {
     display: none;
   }
   .service > p {
-    font-size: 12px;
+    font-size: 14px;
   }
   .tag-list {
     gap: 6px;
@@ -1600,8 +1600,8 @@ textarea:focus-visible {
     max-width: 410px;
   }
   .hero-description > p {
-    font-size: 14px;
-    line-height: 1.85;
+    font-size: 16px;
+    line-height: 1.8;
   }
   .hero-description .button {
     margin-top: 23px;
@@ -1690,7 +1690,7 @@ textarea:focus-visible {
     display: block;
   }
   .service > p {
-    font-size: 13px;
+    font-size: 15px;
   }
   .tag-list {
     margin-block: 21px 24px;
@@ -1769,7 +1769,7 @@ textarea:focus-visible {
     font-size: 21px;
   }
   .about-copy > p:not(.eyebrow):not(.about-lead) {
-    font-size: 13px;
+    font-size: 15px;
   }
   .process-section .section-heading {
     font-size: clamp(31px, 6.9vw, 47px);
@@ -1797,7 +1797,7 @@ textarea:focus-visible {
     margin-bottom: 12px;
   }
   .process-step p {
-    font-size: 13px;
+    font-size: 15px;
   }
   .step-tag {
     margin-top: 21px;
