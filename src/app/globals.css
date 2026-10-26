@@ -1586,11 +1586,11 @@ textarea:focus-visible {
     display: none;
   }
   .hero-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 38px;
   }
   .hero-heading {
-    font-size: clamp(88px, 19.6vw, 136px);
+    font-size: clamp(52px, 19.6vw, 136px);
     line-height: 0.97;
     letter-spacing: -0.07em;
     margin-left: -4px;
@@ -1907,9 +1907,6 @@ textarea:focus-visible {
 @media (max-width: 370px) {
   .shell {
     width: calc(100% - 32px);
-  }
-  .hero-heading {
-    font-size: 24vw;
   }
   .hero-caption {
     font-size: 6px;

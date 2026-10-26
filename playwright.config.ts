@@ -24,7 +24,7 @@ export default defineConfig({
     },
     {
       name: "mobile",
-      use: { ...devices["Pixel 7"], viewport: { width: 390, height: 844 } },
+      use: { ...devices["Pixel 7"], viewport: { width: 393, height: 852 } },
     },
   ],
   webServer: process.env.PLAYWRIGHT_BASE_URL
