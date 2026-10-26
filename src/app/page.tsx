@@ -357,8 +357,8 @@ export default function Home() {
           <Reveal className="about-visual">
             <div className="about-portrait">
               <Image
-                src="/images/coder.jpg"
-                alt="Lars Knoke bei der Arbeit am Laptop"
+                src="/images/start_side.jpg"
+                alt="Person bei der Arbeit am Laptop in einem Café"
                 fill
                 sizes="(max-width: 700px) 90vw, 40vw"
               />

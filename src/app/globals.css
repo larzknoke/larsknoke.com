@@ -800,7 +800,7 @@ textarea:focus-visible {
 }
 .about-portrait img {
   object-fit: cover;
-  object-position: 55%;
+  object-position: 58% center;
   filter: grayscale(1);
 }
 .portrait-corner {
